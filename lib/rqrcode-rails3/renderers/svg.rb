@@ -39,7 +39,7 @@ module RQRCode
           result.unshift %{<rect width="#{dimension}" height="#{dimension}" x="0" y="0" style="fill:##{options[:fill]}"/>}
         end
         
-        options[:raw] ? result : [xml_tag, open_tag, result, close_tag].flatten.join("\n")
+        (options[:raw] ? result : [xml_tag, open_tag, result, close_tag]).flatten.join("\n")
       end
     end
   end
